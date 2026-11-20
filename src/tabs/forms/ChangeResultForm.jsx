@@ -65,7 +65,7 @@ export function ChangeResultForm() {
                     }}>
                         {(field) => (
                             <>
-                                <Input className="p-0"
+                                <Input size="sm" className="p-0"
                                     name={field.name}
                                     onBlur={field.handleBlur}
                                     onChange={(v) => field.handleChange(v)}
@@ -82,7 +82,7 @@ export function ChangeResultForm() {
                     <form.Field name="paramTypes">
                         {(field) => (
                             <>
-                                <Input className="p-0"
+                                <Input size="sm" className="p-0"
                                     name={field.name}
                                     onBlur={field.handleBlur}
                                     onChange={(v) => field.handleChange(v)}
@@ -97,7 +97,7 @@ export function ChangeResultForm() {
                     }}>
                         {(field) => (
                             <>
-                                <Input className="p-0"
+                                <Input size="sm" className="p-0"
                                     name={field.name}
                                     onBlur={field.handleBlur}
                                     onChange={(v) => field.handleChange(v)}
@@ -112,7 +112,7 @@ export function ChangeResultForm() {
                 <div className="my-2">
                     <form.Field name="mode" >
                         {(field) => (
-                            <RadioGroup
+                            <RadioGroup variant="segmented" size="sm"
                                 name={field.name}
                                 onBlur={field.handleBlur}
                                 onChange={(v) => field.handleChange(v)}
@@ -121,7 +121,7 @@ export function ChangeResultForm() {
                                 <Radio value={1}>ASM</Radio>
                             </RadioGroup>)}</form.Field>
                 </div>
-                <div className="my-2 ml-[-5px]">
+                <div className="my-2">
                     <form.Field name="includeNested">
                         {(field) => <Checkbox name={field.name}
                             isSelected={field.state.value}
@@ -134,10 +134,11 @@ export function ChangeResultForm() {
                     <Editor height="200px" defaultLanguage="java"
                         value={code}
                         onChange={(content)=>setCode(content)}
-                        theme="vs-dark" />
+                        theme="vs-dark"
+                        options={{ automaticLayout: true }} />
                 </div>
 
-                <Button type="submit" className="py-2">ChangeResult</Button>
+                <Button size="sm" type="submit">ChangeResult</Button>
             </form>
         </div>
     </TabPanelItem>

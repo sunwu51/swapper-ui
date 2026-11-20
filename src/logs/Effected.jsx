@@ -37,9 +37,9 @@ export default function Effected() {
             theme="vs-dark"
         />
         <div className="flex justify-between items-center">
-            <div className="flex justify-start items-center">
-                <Input className="w-64" placeholder="input uuid" direction="row" onChange={setUUID}></Input>
-                <Button className="bg-[var(--w-yellow)] hover:bg-[var(--w-yellow-dark)] hover:text-white" onPress={delByUUID}>delete by UUID</Button>
+            <div className="mt-2 flex justify-start items-center gap-2">
+                <Input size="sm" className="w-64" placeholder="input uuid" direction="row" onChange={setUUID}></Input>
+                <Button size="sm" className="bg-[var(--w-yellow)] hover:bg-[var(--w-yellow-dark)] hover:text-white" onPress={delByUUID}>delete by UUID</Button>
             </div>
         </div>
     </div>

@@ -59,7 +59,7 @@ export function ChangeBodyForm() {
                     }}>
                         {(field) => (
                             <>
-                                <Input className="p-0"
+                                <Input size="sm" className="p-0"
                                     name={field.name}
                                     onBlur={field.handleBlur}
                                     onChange={(v) => field.handleChange(v)}
@@ -77,7 +77,7 @@ export function ChangeBodyForm() {
                     <form.Field name="paramTypes">
                         {(field) => (
                             <>
-                                <Input className="p-0"
+                                <Input size="sm" className="p-0"
                                     name={field.name}
                                     onBlur={field.handleBlur}
                                     onChange={(v) => field.handleChange(v)}
@@ -96,7 +96,7 @@ export function ChangeBodyForm() {
                     <form.Field name="mode">
                         {(field) => (
                             <>
-                                <RadioGroup
+                                <RadioGroup variant="segmented" size="sm"
                                     name={field.name}
                                     onBlur={field.handleBlur}
                                     onChange={(v) => field.handleChange(v)}
@@ -112,10 +112,11 @@ export function ChangeBodyForm() {
                     <Editor height="100px" defaultLanguage="java"
                         value={code}
                         onChange={(content) => { setCode(content) }}
-                        theme="vs-dark" />
+                        theme="vs-dark"
+                        options={{ automaticLayout: true }} />
                 </div>
 
-                <Button type="submit" className="py-2">ChangeBody</Button>
+                <Button size="sm" type="submit">ChangeBody</Button>
             </form>
         </div>
 

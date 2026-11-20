@@ -92,10 +92,10 @@ export function EvalForm() {
           onMount={handleEditorDidMount}
           value={code}
           onChange={setCode}
-          options={{ wordWrap: true, fontSize: 12 }}
+          options={{ wordWrap: true, fontSize: 12, automaticLayout: true }}
           theme="vs-dark" />
       </div>
-      <Button onPress={submit} className="bg-[var(--w-yellow)] hover:bg-[var(--w-yellow-dark)] hover:text-white">Eval</Button>
+      <Button size="sm" onPress={submit} className="bg-[var(--w-yellow)] hover:bg-[var(--w-yellow-dark)] hover:text-white">Eval</Button>
     </div>
   </TabPanelItem>
 

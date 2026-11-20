@@ -58,7 +58,7 @@ export function WatchForm() {
                     }}>
                         {(field) => (
                             <>
-                                <Input className="p-0"
+                                <Input size="sm" className="p-0"
                                     name={field.name}
                                     onBlur={field.handleBlur}
                                     onChange={(v) => field.handleChange(v)}
@@ -77,7 +77,7 @@ export function WatchForm() {
                     }}>
                         {(field) => (
                             <>
-                                <Input className="p-0"
+                                <Input size="sm" className="p-0"
                                     label="Input the min cost(ms) filter"
                                     type="number"
                                     defaultValue="0"
@@ -96,7 +96,7 @@ export function WatchForm() {
                 <div className="my-2">
                     <form.Field name="printFormat">
                         {(field) => (
-                            <RadioGroup name={field.name}
+                            <RadioGroup variant="segmented" size="sm" name={field.name}
                                 onBlur={field.handleBlur}
                                 onChange={(v) => field.handleChange(parseInt(v))}
                                 className="p-0"
@@ -114,7 +114,7 @@ export function WatchForm() {
                     }}>
                         {(field) => (
                             <>
-                                <Input className="p-0"
+                                <Input size="sm" className="p-0"
                                     label="JSON depth"
                                     type="number"
                                     defaultValue="3"
@@ -132,7 +132,7 @@ export function WatchForm() {
                 <div className="my-2">
                     <form.Field name="ognl">
                         {(field) => (
-                            <Input className="p-0"
+                            <Input size="sm" className="p-0"
                                 name={field.name}
                                 onBlur={field.handleBlur}
                                 onChange={(v) => field.handleChange(v)}
@@ -148,7 +148,7 @@ export function WatchForm() {
                     }}>
                         {(field) => (
                             <>
-                                <Input className="p-0"
+                                <Input size="sm" className="p-0"
                                     name={field.name}
                                     onBlur={field.handleBlur}
                                     onChange={(v) => field.handleChange(v)}
@@ -162,7 +162,7 @@ export function WatchForm() {
                         )}
                     </form.Field>
                 </div>
-                <Button type="submit">watch</Button>
+                <Button size="sm" type="submit">watch</Button>
             </div>
         </form>
     </TabPanelItem>

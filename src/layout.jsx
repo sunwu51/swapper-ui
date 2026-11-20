@@ -1,10 +1,11 @@
-import { Tabs, TabsItem, Badge, Input, Button, Tooltip, Select } from '@sunwu51/camel-ui';
+import { Tabs, TabsItem, Badge, Input, Button, Tooltip, Select, Card } from '@sunwu51/camel-ui';
 import Watch from './tabs/Watch';
 import ChangeBody from './tabs/ChangeBody';
 import Execute from './tabs/Execute';
 import ReplaceClass from './tabs/ReplaceClass';
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import LogContent from './logs/LogContent';
+import SplitPane from './SplitPane';
 import toast, { Toaster } from 'react-hot-toast';
 
 export const ReadyState = {
@@ -202,10 +203,10 @@ export default function Layout() {
         <div>
             <div className='m-2 flex flex-wrap items-end gap-3'>
                 <div>
-                    <Input value={urlInput} className='w-[550px]' defaultValue={defaultUrl} onChange={setUrlInput} aria-label='urlInput'></Input>
+                    <Input size="sm" value={urlInput} className='w-[550px]' defaultValue={defaultUrl} onChange={setUrlInput} aria-label='urlInput'></Input>
                 </div>
                 <div>
-                    <Button onPress={() => {
+                    <Button size="sm" onPress={() => {
                         if (urlInput.startsWith("http://") || urlInput.startsWith("https://"))
                             setApiBaseUrl(urlInput)
                         else
@@ -231,7 +232,7 @@ export default function Layout() {
                 <div className='mx-2 flex items-end gap-3'>
                     <div>
                         <div className='mb-1 text-sm font-semibold'>ClassLoader for class-target, Exec, and Eval operations</div>
-                        <Select key={classLoaderOptions.join('|')} items={classLoaderOptions}
+                        <Select size="sm" key={classLoaderOptions.join('|')} items={classLoaderOptions}
                             className='w-[650px]' defaultIndex={classLoaderDefaultIndex}
                             onSelectedItemChange={(event) => {
                                 const index = classLoaderOptions.indexOf(event.selectedItem);
@@ -239,11 +240,11 @@ export default function Layout() {
                             }}>
                         </Select>
                     </div>
-                    <Button onPress={refreshClassLoaders}>Refresh ClassLoaders</Button>
+                    <Button size="sm" onPress={refreshClassLoaders}>Refresh ClassLoaders</Button>
                 </div>
-                <div className='flex flex-row p-2'>
-                    <div>
-                        <Tabs className='min-w-[700px] max-w-[800px] w-[50vw]' tabPanelClassName='min-h-[84vh]'>
+                <SplitPane className='p-2' left={
+                    <Card className='min-w-0'>
+                        <Tabs variant='line' tabPanelClassName='min-h-[84vh] pt-2'>
                             <TabsItem title='Watch'>
                                 <Watch />
                             </TabsItem>
@@ -257,11 +258,8 @@ export default function Layout() {
                                 <ReplaceClass />
                             </TabsItem>
                         </Tabs>
-                    </div>
-                    <div className='flex-1 min-w-[700px]'>
-                        <LogContent />
-                    </div>
-                </div>
+                    </Card>
+                } right={<LogContent />} />
             </WebSocketContext.Provider>
         </div>
 

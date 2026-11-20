@@ -172,7 +172,7 @@ export function OuterWatchForm() {
     };
     return <TabPanelItem title="OuterWatch">
         <div className="mx-2 mt-4 flex flex-wrap items-center gap-3">
-            <Button type="button" onPress={() => setClassNameDialogOpen(true)}>Inspect calls</Button>
+            <Button size="sm" type="button" onPress={() => setClassNameDialogOpen(true)}>Inspect calls</Button>
             <span className="text-sm text-gray-600">
                 Inspect a class, then click a call in the source or call list to fill the OuterWatch methods.
             </span>
@@ -195,7 +195,7 @@ export function OuterWatchForm() {
                         {(field) => {
                             outerSignatureFieldRef.current = field;
                             return <>
-                                <Input className="p-0"
+                                <Input size="sm" className="p-0"
                                     name={field.name}
                                     value={field.state.value}
                                     onBlur={field.handleBlur}
@@ -217,7 +217,7 @@ export function OuterWatchForm() {
                         {(field) => {
                             innerSignatureFieldRef.current = field;
                             return <>
-                                <Input className="p-0"
+                                <Input size="sm" className="p-0"
                                     name={field.name}
                                     value={field.state.value}
                                     onBlur={field.handleBlur}
@@ -234,7 +234,7 @@ export function OuterWatchForm() {
                 <div className="my-2">
                     <form.Field name="printFormat">
                         {(field) => (
-                            <RadioGroup className="p-0"
+                            <RadioGroup variant="segmented" size="sm" className="p-0"
                                 name={field.name}
                                 onBlur={field.handleBlur}
                                 onChange={(v) => field.handleChange(parseInt(v))}
@@ -250,7 +250,7 @@ export function OuterWatchForm() {
                     }}>
                         {(field) => (
                             <>
-                                <Input className="p-0"
+                                <Input size="sm" className="p-0"
                                     label="JSON depth"
                                     type="number"
                                     defaultValue="3"
@@ -265,7 +265,7 @@ export function OuterWatchForm() {
                         )}
                     </form.Field>
                 </div>
-                <div className="my-2 ml-[-5px]">
+                <div className="my-2">
                     <form.Field name="includeNested">
                         {(field) => <Checkbox name={field.name}
                             isSelected={field.state.value}
@@ -274,7 +274,7 @@ export function OuterWatchForm() {
                         >include synchronous lambdas and anonymous inner classes</Checkbox>}
                     </form.Field>
                 </div>
-                <div className="my-2 ml-[-5px]">
+                <div className="my-2">
                     <form.Field name="printLvt">
                         {(field) => <Checkbox name={field.name}
                             isSelected={field.state.value}
@@ -286,7 +286,7 @@ export function OuterWatchForm() {
                 <div className="my-2">
                     <form.Field name="ognl">
                         {(field) => (
-                            <Input className="p-0"
+                            <Input size="sm" className="p-0"
                                 name={field.name}
                                 onBlur={field.handleBlur}
                                 onChange={(v) => field.handleChange(v)}
@@ -302,7 +302,7 @@ export function OuterWatchForm() {
                     }}>
                         {(field) => (
                             <>
-                                <Input className="p-0"
+                                <Input size="sm" className="p-0"
                                     name={field.name}
                                     onBlur={field.handleBlur}
                                     onChange={(v) => field.handleChange(v)}
@@ -317,7 +317,7 @@ export function OuterWatchForm() {
                     </form.Field>
                 </div>
                 <div className="flex gap-2">
-                    <Button type="submit">watch</Button>
+                    <Button size="sm" type="submit">watch</Button>
                 </div>
             </form>
         </div>
@@ -329,15 +329,15 @@ export function OuterWatchForm() {
                     <button type="button" className="text-2xl leading-none text-gray-500 hover:text-black"
                         aria-label="Close" onClick={() => setClassNameDialogOpen(false)}>&times;</button>
                 </div>
-                <Input className="p-0" label="Class name" value={inspectClassName}
+                <Input size="sm" className="p-0" label="Class name" value={inspectClassName}
                     onChange={setInspectClassName}
                     placeholder="package.name.ClassName"
                     onKeyDown={(event) => {
                         if (event.key === 'Enter') decompileClass();
                     }} />
                 <div className="mt-5 flex justify-end gap-2">
-                    <Button type="button" onPress={() => setClassNameDialogOpen(false)}>Cancel</Button>
-                    <Button type="button" isDisabled={inspectLoading} onPress={decompileClass}>
+                    <Button size="sm" type="button" onPress={() => setClassNameDialogOpen(false)}>Cancel</Button>
+                    <Button size="sm" type="button" isDisabled={inspectLoading} onPress={decompileClass}>
                         {inspectLoading ? 'Inspecting...' : 'Inspect'}
                     </Button>
                 </div>
@@ -358,7 +358,7 @@ export function OuterWatchForm() {
                     <div className="truncate text-xs text-gray-500">{decompileResult.className}</div>
                 </div>
                 <div className="flex shrink-0 gap-2">
-                    <Button type="button" onPress={() => setInspectOpen(false)}>Close</Button>
+                    <Button size="sm" type="button" onPress={() => setInspectOpen(false)}>Close</Button>
                 </div>
             </div>
             <div className="grid h-[calc(100%-3.5rem)] grid-cols-[minmax(0,2fr)_minmax(320px,1fr)]">
