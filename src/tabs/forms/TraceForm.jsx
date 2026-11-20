@@ -46,7 +46,7 @@ export function TraceFrom() {
                     }}>
                         {(field) => (
                             <>
-                                <Input className="p-0"
+                                <Input size="sm" className="p-0"
                                     name={field.name}
                                     onBlur={field.handleBlur}
                                     onChange={(v) => field.handleChange(v)}
@@ -66,7 +66,7 @@ export function TraceFrom() {
                     }}>
                         {(field) => (
                             <>
-                                <Input className="p-0"
+                                <Input size="sm" className="p-0"
                                     name={field.name}
                                     onBlur={field.handleBlur}
                                     onChange={(v) => field.handleChange(parseInt(v))}
@@ -80,7 +80,7 @@ export function TraceFrom() {
                             </>
                         )}</form.Field>
                 </div>
-                <div className="my-2 ml-[-5px]">
+                <div className="my-2">
                     <form.Field name="ignoreZero">
                         {(field) => <Checkbox name={field.name}
                             isSelected={field.state.value}
@@ -89,7 +89,7 @@ export function TraceFrom() {
                         >ignore sub method cost &lt;= 0mills</Checkbox>}
                     </form.Field>
                 </div>
-                <div className="my-2 ml-[-5px]">
+                <div className="my-2">
                     <form.Field name="includeNested">
                         {(field) => <Checkbox name={field.name}
                             isSelected={field.state.value}
@@ -98,7 +98,7 @@ export function TraceFrom() {
                         >include synchronous lambdas and anonymous inner classes</Checkbox>}
                     </form.Field>
                 </div>
-                <Button type="submit" isDisabled={!form.state.isValid}>trace</Button>
+                <Button size="sm" type="submit" isDisabled={!form.state.isValid}>trace</Button>
             </form>
         </div>
     </TabPanelItem>

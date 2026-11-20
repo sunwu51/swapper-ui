@@ -99,13 +99,13 @@ export default function LogContent() {
     }
 
     return <div className="w-full">
-        <div className="flex items-center">
-            <Button className="bg-[var(--w-green)] hover:bg-[var(--w-green-dark)] hover:text-white" onPress={() => { logRef.current = []; setLog(logRef.current) }}>clear log</Button>
-            <Dialog title={"Effected"} trigger={<Button className="bg-[var(--w-indigo)] hover:bg-[var(--w-indigo-dark)] hover:text-white">effected classes</Button>}>
+        <div className="mb-2 flex items-center gap-2">
+            <Button size="sm" className="bg-[var(--w-green)] hover:bg-[var(--w-green-dark)] hover:text-white" onPress={() => { logRef.current = []; setLog(logRef.current) }}>clear log</Button>
+            <Dialog title={"Effected"} trigger={<Button size="sm" className="bg-[var(--w-indigo)] hover:bg-[var(--w-indigo-dark)] hover:text-white">effected classes</Button>}>
                 <Effected />
             </Dialog>
-            <Button className="bg-[var(--w-red)] hover:bg-[var(--w-red-dark)] hover:text-white" onPress={reset}>reset(remove all magic)</Button>
-            <Select items={['debug', 'info']} className="w-64" defaultIndex={1}
+            <Button size="sm" className="bg-[var(--w-red)] hover:bg-[var(--w-red-dark)] hover:text-white" onPress={reset}>reset(remove all magic)</Button>
+            <Select size="sm" items={['debug', 'info']} className="w-64" defaultIndex={1}
                 onSelectedItemChange={(e) => {setLevel(['debug', 'info'].indexOf(e.selectedItem)) }}>
             </Select>
         </div>
@@ -113,7 +113,7 @@ export default function LogContent() {
             <Editor height="calc(100vh - 150px)" defaultLanguage="java" width={'100%'}
                 value={log.filter(it => it.level >= level).map(msg => `[${msg.id}][${moment(msg.timestamp).format("YYYYMMDD HH:mm:ss")}]\n${msg.content}`).join('\n')}
                 theme="vs-dark"
-                options={{ readOnly: true, wordWrap: true}}
+                options={{ readOnly: true, wordWrap: true, automaticLayout: true }}
                 onMount={handleEditorDidMount} />
         </Card>
     </div>

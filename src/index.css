@@ -10,3 +10,42 @@
    border-bottom: 1px solid rgb(22, 163, 74);
    cursor: pointer;
  }
+
+/* 左右分栏(SplitPane): 中间竖条可拖动调整占比 */
+.split-pane {
+  display: flex;
+  align-items: stretch;
+  min-width: 0;
+}
+
+.split-pane-side {
+  flex-grow: 0;
+  flex-shrink: 0;
+  min-width: 0;
+}
+
+.split-pane-main {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.split-pane-resizer {
+  flex: 0 0 12px;
+  margin: 0 2px;
+  border-radius: 4px;
+  cursor: col-resize;
+  touch-action: none;
+  transition: background 0.12s;
+}
+
+.split-pane-resizer:hover,
+.split-pane-resizer:focus-visible {
+  background: color-mix(in srgb, var(--c-focus) 30%, transparent);
+  outline: none;
+}
+
+.split-resizing,
+.split-resizing * {
+  cursor: col-resize !important;
+  user-select: none !important;
+}

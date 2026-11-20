@@ -51,7 +51,7 @@ export function ReplaceClassForm() {
             >
                 <div className="my-2">
                     <Inputfile className="p-0" onChange={fileHandle}>
-                        <Button>select file</Button>
+                        <Button size="sm">select file</Button>
                     </Inputfile>
                 </div>
                 <div className="my-2">
@@ -60,7 +60,7 @@ export function ReplaceClassForm() {
                     }}>
                         {(field) => (
                             <>
-                                <Input className="p-0"
+                                <Input size="sm" className="p-0"
                                     name={field.name}
                                     onBlur={field.handleBlur}
                                     onChange={(v) => field.handleChange(v)}
@@ -72,7 +72,7 @@ export function ReplaceClassForm() {
                             </>)}
                     </form.Field>
                 </div>
-                <Button type="submit" className="bg-[var(--w-yellow)] hover:bg-[var(--w-yellow-dark)] hover:text-white">replace</Button>
+                <Button size="sm" type="submit" className="bg-[var(--w-yellow)] hover:bg-[var(--w-yellow-dark)] hover:text-white">replace</Button>
             </form>
         </div>
     </TabPanelItem>
@@ -119,7 +119,7 @@ export function DecompileForm() {
                     }}>
                         {(field) => (
                             <>
-                                <Input className="p-0"
+                                <Input size="sm" className="p-0"
                                     name={field.name}
                                     onBlur={field.handleBlur}
                                     onChange={(v) => field.handleChange(v)}
@@ -131,7 +131,7 @@ export function DecompileForm() {
                             </>)}
                     </form.Field>
                 </div>
-                <Button type="submit" className="bg-[var(--w-yellow)] hover:bg-[var(--w-yellow-dark)] hover:text-white">decompile</Button>
+                <Button size="sm" type="submit" className="bg-[var(--w-yellow)] hover:bg-[var(--w-yellow-dark)] hover:text-white">decompile</Button>
             </form>
         </div>
     </TabPanelItem>
@@ -177,7 +177,7 @@ export function FindSubclassesForm() {
                     }}>
                         {(field) => (
                             <>
-                                <Input className="p-0"
+                                <Input size="sm" className="p-0"
                                     name={field.name}
                                     onBlur={field.handleBlur}
                                     onChange={(v) => field.handleChange(v)}
@@ -190,7 +190,7 @@ export function FindSubclassesForm() {
                             </>)}
                     </form.Field>
                 </div>
-                <Button type="submit" className="bg-[var(--w-yellow)] hover:bg-[var(--w-yellow-dark)] hover:text-white">find</Button>
+                <Button size="sm" type="submit" className="bg-[var(--w-yellow)] hover:bg-[var(--w-yellow-dark)] hover:text-white">find</Button>
             </form>
         </div>
     </TabPanelItem>
